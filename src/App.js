@@ -15,17 +15,9 @@ const App = () => {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
-
-        /*
-         * Call the getAllWaves method from your Smart Contract
-         */
         const waves = await wavePortalContract.getAllWaves();
         
 
-        /*
-         * We only need address, timestamp, and message in our UI so let's
-         * pick those out
-         */
         let wavesCleaned = [];
         waves.forEach(wave => {
           wavesCleaned.push({
