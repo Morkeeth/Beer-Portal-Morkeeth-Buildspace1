@@ -27,9 +27,7 @@ const App = () => {
           });
         });
 
-        /*
-         * Store our data in React State
-         */
+
         setAllWaves(wavesCleaned);
       } else {
         console.log("Ethereum object doesn't exist!")
